@@ -1,0 +1,246 @@
+/*!
+Theme Name:   Storefront TSW
+Theme URI:    https://tswmall.com
+Author:       JoshuaDoes
+Author URI:   https://joshuadoes.com/
+Description:  Storefront TSW is a child theme for the Storefront theme, designed to be used by The System Within.
+Version:      1.0.79
+Tested up to: 6.5
+Requires PHP: 5.6.0
+License:      GNU General Public License v3 or later
+License URI:  https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain:  storefront
+Tags:         e-commerce, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support, footer-widgets, sticky-post, theme-options, editor-style
+Template:     storefront
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Storefront is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer https://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+
+All sizing (typography, layout, padding/margins, etc) are inspired by a modular scale that uses 1em as a base size with a 1.618 ratio.
+You can read more about the calculator we use in our Sass here: https://github.com/modularscale/modularscale-sass
+
+FontAwesome License: SIL Open Font License - http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Images License: GNU General Public License v2 or later
+*/
+
+:root {
+	--tsw: #0d6eb5;
+	--tsw-alt: #818181;
+	--tsw-bg: #212121;
+	--transparent: rgba(0, 0, 0, 0);
+	--white-almost: #fafafa;
+
+	--arrow-bg: rgba(129, 129, 129, 0.9);
+	--arrow-bg-hover: #818181;
+	--arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+	--option-bg: #818181;
+	--select-bg: #0d6eb5;
+}
+
+@font-face {
+	font-family: "Helvetica Black";
+	src: url(https://tsw-place.com/fonts/helvetica/helvetica-black/helveticablackoriginal_bold.otf);
+}
+
+@font-face {
+	font-family: "Arista 2.0";
+	src: url(https://tsw-place.com/fonts/arista/arista2.0/z-arista.regular.ttf);
+}
+
+span.tsw {
+	color: var(--tsw) !important;
+}
+
+span.tsw-alt {
+	color: var(--tsw-alt) !important;
+}
+
+body {
+	font-family: "Roboto", sans-serif !important;
+}
+
+.site-header {
+	background-color: var(--tsw-bg) !important;
+	color: var(--white-almost) !important;
+}
+
+.site-footer {
+	background-color: var(--tsw-bg) !important;
+	color: var(--white-almost) !important;
+}
+
+.site-footer a {
+	color: var(--tsw-alt) !important;
+}
+
+blockquote {
+	border-left: 3px solid var(--tsw-alt) !important;
+	padding: 0 1em !important;
+	font-style: italic !important;
+}
+
+.fa-solid, .fa-regular {
+	color: var(--tsw) !important;
+}
+
+span.count {
+	font-weight: 700 !important;
+	opacity: .9 !important;
+}
+
+.site-header-cart .cart-contents::after {
+	font-weight: 750 !important;
+}
+
+.nav-menu a {
+	color: var(--tsw-alt) !important;
+	font-family: "Arista 2.0", sans-serif !important;
+	font-weight: 750 !important;
+}
+
+.sub-menu a {
+	color: var(--tsw-alt) !important;
+	font-weight: 750 !important;
+}
+
+.pagination,
+.woocommerce-pagination {
+	padding: 1em 0;
+	border: 1px solid rgba(0,0,0,.05);
+	border-width: 1px 0;
+	text-align: center;
+	clear: both
+}
+.pagination ul.page-numbers::before,
+.pagination ul.page-numbers::after,
+.woocommerce-pagination ul.page-numbers::before,
+.woocommerce-pagination ul.page-numbers::after {
+	content: "";
+	display: table
+}
+.pagination ul.page-numbers::after,
+.woocommerce-pagination ul.page-numbers::after {
+	clear: both
+}
+.pagination .page-numbers,
+.woocommerce-pagination .page-numbers {
+	list-style: none;
+	margin: 0;
+	vertical-align: middle
+}
+.pagination .page-numbers li,
+.woocommerce-pagination .page-numbers li {
+	display: inline-block
+}
+.pagination .page-numbers li .page-numbers,
+.woocommerce-pagination .page-numbers li .page-numbers {
+	border-left-width: 0;
+	display: inline-block;
+	padding: .3342343017em .875em;
+}
+.pagination .page-numbers li .page-numbers.current,
+.woocommerce-pagination .page-numbers li .page-numbers.current {
+	background-color: var(--tsw);
+	color: var(--white-almost);
+	border-color: var(--tsw)
+}
+.pagination .page-numbers li .page-numbers.current,
+.woocommerce-pagination .page-numbers li .page-numbers:not(.current) {
+	color: var(--tsw-alt);
+}
+.pagination .page-numbers li .page-numbers.dots,
+.woocommerce-pagination .page-numbers li .page-numbers.dots {
+	background-color: var(--transparent)
+}
+.pagination .page-numbers li .page-numbers.prev,
+.pagination .page-numbers li .page-numbers.next,
+.woocommerce-pagination .page-numbers li .page-numbers.prev,
+.woocommerce-pagination .page-numbers li .page-numbers.next {
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-left: 1em;
+	margin-right: 1em
+}
+.pagination .page-numbers li a.page-numbers:hover,
+.woocommerce-pagination .page-numbers li a.page-numbers:hover {
+	background-color: var(--tsw-alt);
+	color: var(--white-almost)
+}
+.rtl .pagination a.next,
+.rtl .pagination a.prev,
+.rtl .woocommerce-pagination a.next,
+.rtl .woocommerce-pagination a.prev {
+	transform: rotateY(180deg)
+}
+
+.woocommerce-ordering {
+	box-sizing: border-box
+}
+.woocommerce-ordering select {
+	/* Reset */
+	appearance: none;
+	border: 0;
+	outline: 0;
+	font: inherit;
+
+	/* Personalize */
+	width: 25rem;
+	padding: 1rem 4rem 1rem 1rem;
+	background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+	linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+	color: white;
+	border-radius: 0.25em;
+	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	
+	/* Hover animations */
+	transition: 0.4s;
+	opacity: 0.75;
+
+	/* Remove IE arrow */
+	&::-ms-expand {
+		display: none;
+	}
+
+	/* Remove focus outline */
+	&:focus {
+		outline: none;
+	}
+}
+.woocommerce-ordering select:hover {
+	opacity: 1;
+}
+.woocommerce-ordering select option {
+	background-color: var(--tsw-alt);
+	color: var(--white-almost);
+}
+
+.woocommerce-result-count {
+	float: right;
+}
+
+p {
+	margin-bottom: unset !important;
+}
+
+svg.e-font-icon-svg path {
+	fill: var(--white-almost);
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"], .button, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link, .added_to_cart {
+	background-color: var(--tsw-bg) !important;
+	border-color: none !important;
+	color: var(--white-almost) !important;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .widget a.button:hover {
+	background-color: var(--tsw) !important;
+	border-color: none !important;
+	color: var(--white-almost) !important;
+}
